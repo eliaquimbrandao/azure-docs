@@ -38,6 +38,13 @@ You can add or remove resource instance network rules in the Azure portal:
 
 6. Select **Save** to apply your changes. The resource instance appears in the **Resource instances** section of the network settings page.
 
+> [!NOTE]
+> When resource instance network rules are configured programmatically (for example, using ARM templates, Bicep, Terraform, Azure CLI, or Azure PowerShell) with wildcard (`*`) values in the resource ID to represent all subscriptions and resource groups within the Microsoft Entra tenant, the Azure portal may not display any value in the **Instance name** field and may not show the friendly label such as **"All in current tenant."**
+>
+> This is an Azure portal visualization limitation and does not indicate that the rule is missing or incorrectly configured. The rule is still successfully applied and enforced.
+>
+> You can verify the configuration by reviewing the storage account resource in the **JSON view**, Azure CLI, or Azure PowerShell.
+
 To remove the resource instance, select the delete icon (:::image type="icon" source="media/storage-network-security/delete-icon.png":::) next to the resource instance.
 
 ### [PowerShell](#tab/azure-powershell)
